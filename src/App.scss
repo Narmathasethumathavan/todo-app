@@ -1,7 +1,25 @@
 .App {
-	text-align: center;
 
 	button {
 		font-weight: bold;
 	}
+}
+.input{
+	position: absolute;
+	top: 50px;
+	left:350px;
+	width: 2000px;
+}
+.add{
+	position: absolute;
+	top: 50px;
+	left:600px;
+}
+
+.container{
+	position: absolute;
+	top: 7%;
+	border: 2px dashed midnightblue ;
+	width: max-content;
+
 }

@@ -1,9 +1,25 @@
-import { React } from 'react';
+import { Box } from '@mui/material';
+import { React, useState } from 'react';
 import './App.scss';
+import Add from './components/Add';
+import TextInput from './components/TextBox';
+import Container from './components/TodoContainer';
 
-const App = () =>
-	<div className="App">
-		Ready to start.
-	</div>;
+const getState = () => ({
+	currentState: 'values',
+	todoList: [],
+});
+
+const App = (context) => {
+	const [state, setState] = useState(getState(context));
+	const extendedContext = { ...{ ...context, state, setState }};
+
+	return (
+		<Box className="App">
+			<TextInput { ...extendedContext }/>
+			<Add { ...extendedContext }/>
+			<Container { ...extendedContext }/>
+		</Box>);
+};
 
 export default App;
