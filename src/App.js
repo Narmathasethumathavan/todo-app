@@ -6,8 +6,9 @@ import TextInput from './components/TextBox';
 import Container from './components/TodoContainer';
 
 const getState = () => ({
-	currentState: 'values',
+	currentState: ' ',
 	todoList: [],
+	addDisabled: true,
 });
 
 const App = (context) => {

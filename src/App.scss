@@ -1,5 +1,4 @@
 .App {
-
 	button {
 		font-weight: bold;
 	}
@@ -7,19 +6,18 @@
 .input{
 	position: absolute;
 	top: 50px;
-	left:350px;
-	width: 2000px;
+	left:500px;
+	width:40%;
 }
 .add{
 	position: absolute;
-	top: 50px;
-	left:600px;
+	top: 65px;
+	left:750px;
 }
 
 .container{
 	position: absolute;
-	top: 7%;
-	border: 2px dashed midnightblue ;
+	left:500px;
+	border: 2px outlined midnightblue ;
 	width: max-content;
-
 }
