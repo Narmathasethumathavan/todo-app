@@ -1,10 +1,11 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable no-magic-numbers */
 import { Box, Checkbox, ListItem } from '@mui/material';
 import React from 'react';
-import DeleteTodo from './Delete';
+import Delete from './Delete';
 
-const Container = (context) => {
-	const { state: { todoList }} = context;
+const TodoContainer = (context) => {
+	const { setState, state, state: { todoList }} = context;
 
 	return (
 		todoList.map((todo, key) =>
@@ -13,13 +14,17 @@ const Container = (context) => {
 				className="container"
 				style={ { top: `${ key * 40 + 130 }px` } }
 			>
-				<ListItem>
+				<ListItem
+					onClick={ () => setState({ ...state,
+						added: true,
+						edit: todo,
+						currentState: todo.name }) }
+				>
 					<Checkbox/>
-					{todo.todoName}
-					<DeleteTodo { ... { ...context, data: todo } }/>
-
+					{todo.name}
+					<Delete { ... { ...context, data: todo } }/>
 				</ListItem>
 			</Box>));
 };
 
-export default Container;
+export default TodoContainer;

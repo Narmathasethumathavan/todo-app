@@ -1,14 +1,15 @@
 import { Box } from '@mui/material';
 import { React, useState } from 'react';
 import './App.scss';
-import Add from './components/Add';
-import TextInput from './components/TextBox';
-import Container from './components/TodoContainer';
+import Button from './components/Button';
+import TextInput from './components/TextInput';
+import TodoContainer from './components/TodoContainer';
 
 const getState = () => ({
 	currentState: ' ',
 	todoList: [],
 	addDisabled: true,
+	added: false,
 });
 
 const App = (context) => {
@@ -18,8 +19,8 @@ const App = (context) => {
 	return (
 		<Box className="App">
 			<TextInput { ...extendedContext }/>
-			<Add { ...extendedContext }/>
-			<Container { ...extendedContext }/>
+			<Button { ...extendedContext }/>
+			<TodoContainer { ...extendedContext }/>
 		</Box>);
 };
 

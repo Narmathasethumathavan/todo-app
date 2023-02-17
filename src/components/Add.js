@@ -8,13 +8,14 @@ const Add = (context) => {
 
 	return (
 		<Button
-			className="add"
+			className="button"
 			variant="contained"
 			disabled={ addDisabled }
 			onClick={ () => setState({
 				...state,
 				todoList: [...todoList, todoFunction.addTodo(context)],
 				currentState: ' ',
+				addDisabled: true,
 			}) }
 		>
 			Add

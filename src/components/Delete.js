@@ -3,7 +3,7 @@ import { React } from 'react';
 import todoFunction from '../services/todoFunction';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const DeleteTodo = (context) => {
+const Delete = (context) => {
 	const { setState, state } = context;
 
 	return <Box>
@@ -17,4 +17,4 @@ const DeleteTodo = (context) => {
 	</Box>;
 };
 
-export default DeleteTodo;
+export default Delete;

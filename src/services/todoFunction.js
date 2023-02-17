@@ -1,18 +1,25 @@
-import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
 const idLength = 4;
 const addTodo = ({ state: { currentState }}) =>
 	({
-		todoName: currentState,
 		id: rndString(idLength),
+		name: currentState,
 	});
+
 const removeTodo = ({ state: { todoList }, data: todo }) =>
-	todoList.filter((oneTodo) => peek(oneTodo.id) !== peek(todo.id));
+	todoList.filter((oneTodo) => oneTodo.id !== todo.id);
+
+const UpdatedTodo = ({ state: { currentState, todoList, edit: todo }}) =>
+	todoList.map((todoItem) =>
+		(todoItem.id === todo.id
+			? { ...todoItem, name: currentState }
+			: todoItem));
 
 const todoFunction = {
 	addTodo,
 	removeTodo,
+	UpdatedTodo,
 };
 
 export default todoFunction;
