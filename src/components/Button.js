@@ -3,12 +3,12 @@ import Add from './Add';
 import Update from './Update';
 
 const Button = (context) => {
-	const { state: { added }} = context;
+	const { state: { edit }} = context;
 
 	return (
-		added
-			? <Update { ...context }/>
-			: <Add { ...context }/>);
+		edit === ''
+			? <Add { ...context }/>
+			: <Update { ...context }/>);
 };
 
 export default Button;

@@ -12,7 +12,8 @@ const Update = (context) => {
 			onClick={ () => setState({
 				...state,
 				todoList: todoFunction.UpdatedTodo(context),
-				added: false,
+				edit: '',
+				currentState: '',
 			}) }
 		>
 			Update

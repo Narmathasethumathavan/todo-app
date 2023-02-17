@@ -9,7 +9,7 @@ const getState = () => ({
 	currentState: ' ',
 	todoList: [],
 	addDisabled: true,
-	added: false,
+	edit: '',
 });
 
 const App = (context) => {

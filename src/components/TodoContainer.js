@@ -14,14 +14,14 @@ const TodoContainer = (context) => {
 				className="container"
 				style={ { top: `${ key * 40 + 130 }px` } }
 			>
-				<ListItem
-					onClick={ () => setState({ ...state,
-						added: true,
+				<ListItem>
+					<Checkbox/>
+					<Box onClick={ () => setState({ ...state,
 						edit: todo,
 						currentState: todo.name }) }
-				>
-					<Checkbox/>
-					{todo.name}
+					>
+						{todo.name}
+					</Box>
 					<Delete { ... { ...context, data: todo } }/>
 				</ListItem>
 			</Box>));
