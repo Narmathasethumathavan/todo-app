@@ -1,9 +1,10 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
+import todoFunction from '../services/todoFunction';
 
 const Add = (context) => {
 	const { setState, state } = context;
-	const { todoList, currentState, addDisabled } = state;
+	const { todoList, addDisabled } = state;
 
 	return (
 		<Button
@@ -12,7 +13,7 @@ const Add = (context) => {
 			disabled={ addDisabled }
 			onClick={ () => setState({
 				...state,
-				todoList: [...todoList, currentState],
+				todoList: [...todoList, todoFunction.addTodo(context)],
 				currentState: ' ',
 			}) }
 		>
