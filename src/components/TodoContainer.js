@@ -1,11 +1,13 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable no-magic-numbers */
-import { Box, Checkbox, ListItem } from '@mui/material';
+import { Box, ListItem } from '@mui/material';
 import React from 'react';
+import CheckBox from './CheckBox';
 import Delete from './Delete';
 
 const TodoContainer = (context) => {
-	const { setState, state, state: { todoList }} = context;
+	const { setState, state } = context;
+	const { todoList } = state;
 
 	return (
 		todoList.map((todo, key) =>
@@ -15,7 +17,7 @@ const TodoContainer = (context) => {
 				style={ { top: `${ key * 40 + 130 }px` } }
 			>
 				<ListItem>
-					<Checkbox/>
+					<CheckBox { ...{ ...context, data: todo } }/>
 					<Box onClick={ () => setState({ ...state,
 						edit: todo,
 						currentState: todo.name }) }

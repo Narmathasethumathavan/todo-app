@@ -1,26 +1,19 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
-
 import todoFunction from '../services/todoFunction';
 
-const Update = (context) => {
-	const { setState, state } = context;
+const Clear = (context) => {
+	const { state, setState } = context;
 
 	return (
 		<Button
-			className="button"
+			className="clear"
 			variant="contained"
-
 			onClick={ () => setState({
 				...state,
-				todoList: todoFunction.UpdatedTodo(context),
-				edit: '',
-				currentState: '',
+				todoList: todoFunction.clearTodo(context),
 			}) }
 		>
-			Update
-		</Button>
-	);
+			clearCompleted
+		</Button>);
 };
-
-export default Update;
