@@ -10,7 +10,6 @@ const Update = (context) => {
 		<Button
 			className="button"
 			variant="contained"
-
 			onClick={ () => setState({
 				...state,
 				todoList: todoFunction.UpdatedTodo(context),

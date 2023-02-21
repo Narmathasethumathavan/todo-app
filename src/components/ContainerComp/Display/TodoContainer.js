@@ -1,10 +1,10 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable no-magic-numbers */
 import { Box, ListItem } from '@mui/material';
 import React from 'react';
 import CheckBox from './CheckBox';
 import Delete from './Delete';
-import Edit from './Edit';
+import Todo from './Todo';
+const todoMultiplier = 40;
+const todoTopMargin = 130;
 
 const TodoContainer = (context) => {
 	const { state: { todoList }} = context;
@@ -14,11 +14,11 @@ const TodoContainer = (context) => {
 			<Box
 				key={ key }
 				className="container"
-				style={ { top: `${ key * 40 + 130 }px` } }
+				style={ { top: `${ key * todoMultiplier + todoTopMargin }px` } }
 			>
 				<ListItem>
 					<CheckBox { ...{ ...context, data: todo } }/>
-					<Edit { ...{ ...context, data: todo } }/>
+					<Todo { ...{ ...context, data: todo } }/>
 					<Delete { ... { ...context, data: todo } }/>
 				</ListItem>
 			</Box>));

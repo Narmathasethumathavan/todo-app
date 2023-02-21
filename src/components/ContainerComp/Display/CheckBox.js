@@ -11,7 +11,7 @@ const CheckBox = (context) => {
 				checked={ todo.isChecked }
 				onClick={ () => setState({
 					...state,
-					todoList: todoFunction.selectItems({ ...{ ...context,
+					todoList: todoFunction.selectItem({ ...{ ...context,
 						data: todo }}),
 				}) }
 			/>

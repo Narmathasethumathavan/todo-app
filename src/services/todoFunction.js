@@ -9,7 +9,7 @@ const addTodo = ({ state: { currentState }}) =>
 	});
 
 const removeTodo = ({ state: { todoList }, data: todo }) =>
-	todoList.filter((oneTodo) => oneTodo.id !== todo.id);
+	todoList.filter((todoItem) => todoItem.id !== todo.id);
 
 const UpdatedTodo = ({ state: { currentState, todoList, edit: todo }}) =>
 	todoList.map((todoItem) =>
@@ -17,32 +17,32 @@ const UpdatedTodo = ({ state: { currentState, todoList, edit: todo }}) =>
 			? { ...todoItem, name: currentState }
 			: todoItem));
 
-const selectAllTodo = ({ state: { todoList }, data }) =>
+const toggleAllTodo = ({ state: { todoList }, data }) =>
 	todoList.map((todo) => ({
 		...todo,
 		isChecked: data,
 	}));
 
-const selectItems = ({ state: { todoList }, data: todo }) =>
+const selectItem = ({ state: { todoList }, data: todo }) =>
 	todoList.map((todoItem) => (todoItem.id === todo.id
 		? { ...todo, isChecked: !todo.isChecked }
 		: todoItem
 	));
 
-const toSelectAllTodo = ({ state: { todoList }}) => todoList.every((todo) =>
-	todo.isChecked === true);
+const isAllTodoSelected = ({ state: { todoList }}) => todoList.every((todo) =>
+	todo.isChecked);
 
 const clearTodo = ({ state: { todoList }}) =>
-	todoList.filter((todoItem) => todoItem.isChecked === false);
+	todoList.filter((todoItem) => !todoItem.isChecked);
 
 const todoFunction = {
 	addTodo,
 	removeTodo,
 	UpdatedTodo,
-	selectAllTodo,
+	toggleAllTodo,
 	clearTodo,
-	selectItems,
-	toSelectAllTodo,
+	selectItem,
+	isAllTodoSelected,
 };
 
 export default todoFunction;

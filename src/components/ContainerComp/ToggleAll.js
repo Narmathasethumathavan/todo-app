@@ -4,7 +4,7 @@ import todoFunction from '../../services/todoFunction';
 
 const ToggleAll = (context) => {
 	const { state, setState } = context;
-	const isAllTodoSelected = todoFunction.toSelectAllTodo(context);
+	const isAllTodoSelected = todoFunction.isAllTodoSelected(context);
 
 	return (
 		<Box className="selectAll">
