@@ -1,11 +1,8 @@
 import { Box } from '@mui/material';
 import { React, useState } from 'react';
 import './App.scss';
-import Button from './components/TodoInput/Button';
-import ToggleAll from './components/ContainerComp/ToggleAll';
-import TextInput from './components/TodoInput/TextInput';
-import TodoContainer from './components/ContainerComp/Display/TodoContainer';
-import Clear from './components/ContainerComp/Clear';
+import TodoDisplay from './components/ContainerComp';
+import TodoInput from './components/TodoInput';
 
 const getState = () => ({
 	currentState: ' ',
@@ -20,12 +17,8 @@ const App = (context) => {
 
 	return (
 		<Box className="App">
-			<TextInput { ...extendedContext }/>
-			<Button { ...extendedContext }/>
-			<ToggleAll { ...extendedContext }/>
-			<TodoContainer { ...extendedContext }/>
-			<Clear { ...extendedContext }/>
-
+			<TodoInput { ...extendedContext }/>
+			<TodoDisplay { ...extendedContext }/>
 		</Box>);
 };
 
