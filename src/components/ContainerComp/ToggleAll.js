@@ -10,9 +10,9 @@ const ToggleAll = (context) => {
 		<Box className="selectAll">
 			<Checkbox
 				checked={ isAllTodoSelected }
-				onChange={ (event) => setState({
+				onClick={ (event) => setState({
 					...state,
-					todoList: todoFunction.selectAllTodo({ ...{ ...context,
+					todoList: todoFunction.toggleAllTodo({ ...{ ...context,
 						data: event.target.checked }}),
 				}) }
 			/>

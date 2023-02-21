@@ -10,10 +10,10 @@ const TextInput = (context) => {
 		>
 			<TextField
 				id="outlined-basic"
-				value={ state.currentState }
+				value={ state.todoInput }
 				onChange={ (event) => setState({
 					...state,
-					currentState: event.target.value,
+					todoInput: event.target.value,
 				}) }
 			/>
 		</Box>);

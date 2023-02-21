@@ -6,7 +6,7 @@ const Todo = ({ state, setState, data: todo }) =>
 	<Box
 		onClick={ () => setState({ ...state,
 			edit: todo,
-			currentState: todo.name }) }
+			todoInput: todo.name }) }
 	>
 		{todo.name}
 	</Box>;

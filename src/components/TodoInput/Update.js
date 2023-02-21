@@ -14,7 +14,7 @@ const Update = (context) => {
 				...state,
 				todoList: todoFunction.UpdatedTodo(context),
 				edit: '',
-				currentState: ' ',
+				todoInput: '',
 			}) }
 		>
 			Update

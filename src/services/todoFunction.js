@@ -1,20 +1,20 @@
 import { rndString } from '@laufire/utils/random';
 
 const idLength = 4;
-const addTodo = ({ state: { currentState }}) =>
+const addTodo = ({ state: { todoInput }}) =>
 	({
 		id: rndString(idLength),
-		name: currentState,
+		name: todoInput,
 		isChecked: false,
 	});
 
 const removeTodo = ({ state: { todoList }, data: todo }) =>
 	todoList.filter((todoItem) => todoItem.id !== todo.id);
 
-const UpdatedTodo = ({ state: { currentState, todoList, edit: todo }}) =>
+const UpdatedTodo = ({ state: { todoInput, todoList, edit: todo }}) =>
 	todoList.map((todoItem) =>
 		(todoItem.id === todo.id
-			? { ...todoItem, name: currentState }
+			? { ...todoItem, name: todoInput }
 			: todoItem));
 
 const toggleAllTodo = ({ state: { todoList }, data }) =>

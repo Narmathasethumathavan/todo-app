@@ -5,14 +5,13 @@ import TodoDisplay from './components/ContainerComp';
 import TodoInput from './components/TodoInput';
 
 const getState = () => ({
-	currentState: ' ',
+	todoInput: '',
 	todoList: [],
 	edit: '',
 });
 
 const App = (context) => {
 	const [state, setState] = useState(getState(context));
-
 	const extendedContext = { ...{ ...context, state, setState }};
 
 	return (
