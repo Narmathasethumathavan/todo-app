@@ -4,10 +4,10 @@ import { Box, ListItem } from '@mui/material';
 import React from 'react';
 import CheckBox from './CheckBox';
 import Delete from './Delete';
+import Edit from './Edit';
 
 const TodoContainer = (context) => {
-	const { setState, state } = context;
-	const { todoList } = state;
+	const { state: { todoList }} = context;
 
 	return (
 		todoList.map((todo, key) =>
@@ -18,12 +18,7 @@ const TodoContainer = (context) => {
 			>
 				<ListItem>
 					<CheckBox { ...{ ...context, data: todo } }/>
-					<Box onClick={ () => setState({ ...state,
-						edit: todo,
-						currentState: todo.name }) }
-					>
-						{todo.name}
-					</Box>
+					<Edit { ...{ ...context, data: todo } }/>
 					<Delete { ... { ...context, data: todo } }/>
 				</ListItem>
 			</Box>));

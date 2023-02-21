@@ -1,8 +1,8 @@
 import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
-import todoFunction from '../services/todoFunction';
+import todoFunction from '../../services/todoFunction';
 
-const SelectAll = (context) => {
+const ToggleAll = (context) => {
 	const { state, setState } = context;
 	const isAllTodoSelected = todoFunction.toSelectAllTodo(context);
 
@@ -20,4 +20,4 @@ const SelectAll = (context) => {
 		</Box>);
 };
 
-export default SelectAll;
+export default ToggleAll;

@@ -1,4 +1,3 @@
-import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
 const idLength = 4;
@@ -25,16 +24,16 @@ const selectAllTodo = ({ state: { todoList }, data }) =>
 	}));
 
 const selectItems = ({ state: { todoList }, data: todo }) =>
-	peek(todoList.map((todoItem) => (todoItem.id === todo.id
+	todoList.map((todoItem) => (todoItem.id === todo.id
 		? { ...todo, isChecked: !todo.isChecked }
 		: todoItem
-	)));
+	));
 
 const toSelectAllTodo = ({ state: { todoList }}) => todoList.every((todo) =>
 	todo.isChecked === true);
 
-const clearTodo = ({ state: { todoList }, check: todo }) =>
-	todoList.filter((oneTodo) => oneTodo.isChecked !== todo.isChecked);
+const clearTodo = ({ state: { todoList }}) =>
+	todoList.filter((todoItem) => todoItem.isChecked === false);
 
 const todoFunction = {
 	addTodo,
