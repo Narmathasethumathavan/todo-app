@@ -4,18 +4,17 @@ import todoFunction from '../../services/todoFunction';
 
 const Add = (context) => {
 	const { setState, state } = context;
-	const { todoList, addDisabled } = state;
+	const { todoList, currentState } = state;
 
 	return (
 		<Button
 			className="button"
 			variant="contained"
-			disabled={ addDisabled }
+			disabled={ currentState === ' ' }
 			onClick={ () => setState({
 				...state,
 				todoList: [...todoList, todoFunction.addTodo(context)],
 				currentState: ' ',
-				addDisabled: true,
 			}) }
 		>
 			Add

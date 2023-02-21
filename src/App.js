@@ -10,7 +10,6 @@ import Clear from './components/ContainerComp/Clear';
 const getState = () => ({
 	currentState: ' ',
 	todoList: [],
-	addDisabled: true,
 	edit: '',
 });
 

@@ -14,7 +14,6 @@ const TextInput = (context) => {
 				onChange={ (event) => setState({
 					...state,
 					currentState: event.target.value,
-					addDisabled: false,
 				}) }
 			/>
 		</Box>);
