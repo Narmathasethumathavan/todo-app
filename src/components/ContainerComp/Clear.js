@@ -8,13 +8,13 @@ const Clear = (context) => {
 	return <Box>
 		<Button
 			className="clear"
-			variant="contained"
+			variant="outlined"
 			onClick={ () => setState({
 				...state,
 				todoList: todoFunction.clearTodo(context),
 			}) }
 		>
-			Clear</Button>
+			Clear Completed</Button>
 	</Box>;
 };
 

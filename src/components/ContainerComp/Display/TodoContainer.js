@@ -1,16 +1,17 @@
 import { Box, ListItem } from '@mui/material';
 import React from 'react';
+import todoFunction from '../../../services/todoFunction';
 import CheckBox from './CheckBox';
 import Delete from './Delete';
 import Todo from './Todo';
-const todoMultiplier = 40;
-const todoTopMargin = 130;
+const todoMultiplier = 50;
+const todoTopMargin = 180;
 
 const TodoContainer = (context) => {
-	const { state: { todoList }} = context;
+	const filterTodo = todoFunction.getFilter(context);
 
 	return (
-		todoList.map((todo, key) =>
+		filterTodo.map((todo, key) =>
 			<Box
 				key={ key }
 				className="container"

@@ -29,11 +29,23 @@ const selectItem = ({ state: { todoList }, data: todo }) =>
 		: todoItem
 	));
 
-const isAllTodoSelected = ({ state: { todoList }}) => todoList.every((todo) =>
-	todo.isChecked);
+const isAllTodoSelected = ({ state: { todoList }}) =>
+	todoList.length && todoList.every((todo) =>
+		todo.isChecked);
 
 const clearTodo = ({ state: { todoList }}) =>
 	todoList.filter((todoItem) => !todoItem.isChecked);
+
+const filters = {
+	All: ({ state: { todoList }}) => todoList,
+	Active: ({ state: { todoList }}) =>
+		todoList.filter((todoItem) => !todoItem.isChecked),
+	Completed: ({ state: { todoList }}) =>
+		todoList.filter((todoItem) => todoItem.isChecked),
+
+};
+const getFilter = (context) =>
+	filters[context.state.filter](context);
 
 const todoFunction = {
 	addTodo,
@@ -43,6 +55,8 @@ const todoFunction = {
 	clearTodo,
 	selectItem,
 	isAllTodoSelected,
+	getFilter,
+	filters,
 };
 
 export default todoFunction;

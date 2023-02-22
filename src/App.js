@@ -8,6 +8,7 @@ const getState = () => ({
 	todoInput: '',
 	todoList: [],
 	edit: '',
+	filter: 'All',
 });
 
 const App = (context) => {
