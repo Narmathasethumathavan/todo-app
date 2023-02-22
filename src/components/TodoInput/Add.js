@@ -10,7 +10,8 @@ const Add = (context) => {
 		<Button
 			className="button"
 			variant="contained"
-			disabled={ todoInput === '' }
+			disabled={ todoFunction.toSelect({ ...{ ...context,
+				data: todoInput }}) }
 			onClick={ () => setState({
 				...state,
 				todoList: [...todoList, todoFunction.addTodo(context)],

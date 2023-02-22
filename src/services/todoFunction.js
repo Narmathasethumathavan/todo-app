@@ -47,6 +47,8 @@ const filters = {
 const getFilter = (context) =>
 	filters[context.state.filter](context);
 
+const toSelect = ({ data }) => data === '';
+
 const todoFunction = {
 	addTodo,
 	removeTodo,
@@ -57,6 +59,7 @@ const todoFunction = {
 	isAllTodoSelected,
 	getFilter,
 	filters,
+	toSelect,
 };
 
 export default todoFunction;
