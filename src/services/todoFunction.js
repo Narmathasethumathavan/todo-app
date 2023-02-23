@@ -1,6 +1,7 @@
 import { rndString } from '@laufire/utils/random';
 
 const idLength = 4;
+
 const addTodo = ({ state: { todoInput }}) =>
 	({
 		id: rndString(idLength),
@@ -42,8 +43,8 @@ const filters = {
 		todoList.filter((todoItem) => !todoItem.isChecked),
 	Completed: ({ state: { todoList }}) =>
 		todoList.filter((todoItem) => todoItem.isChecked),
-
 };
+
 const getFilter = (context) =>
 	filters[context.state.filter](context);
 

@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import { Box, ButtonGroup } from '@mui/material';
 import { React } from 'react';
 import Active from './Active';
