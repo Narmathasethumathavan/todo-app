@@ -1,19 +1,20 @@
 import { Box, ButtonGroup } from '@mui/material';
 import { React } from 'react';
-import Active from './Active';
-import All from './All';
-import Completed from './Completed';
+import Actions from './Actions';
 
-const Filter = (context) =>
-	<Box>
-		<ButtonGroup
-			className="filter"
-			variant="outlined"
-		>
-			<All { ...context }/>
-			<Active { ...context }/>
-			<Completed { ...context }/>
-		</ButtonGroup>
-	</Box>;
+const Filter = (context) => {
+	const { config: { actions }} = context;
+
+	return (
+		<Box>
+			<ButtonGroup
+				className="filter"
+				variant="outlined"
+			>
+				{actions.map((item, key) =>
+					<Actions key={ key } { ...{ ...context, data: item } }/>)}
+			</ButtonGroup>
+		</Box>);
+};
 
 export default Filter;

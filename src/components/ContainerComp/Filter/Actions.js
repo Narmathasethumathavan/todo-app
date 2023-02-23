@@ -1,12 +1,14 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
 
-const Active = ({ state, setState }) =>
+const Actions = ({ state, setState, data }) =>
+
 	<Button
 		onClick={ () => setState({
 			...state,
-			filter: 'Active',
+			filter: data,
 		}) }
-	>Active</Button>;
+	>{data}
+	</Button>;
 
-export default Active;
+export default Actions;

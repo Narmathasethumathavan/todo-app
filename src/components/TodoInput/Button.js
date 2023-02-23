@@ -7,7 +7,7 @@ const Button = (context) => {
 	const { state: { edit }} = context;
 
 	return (
-		todoFunction.toSelect({ ...{ ...context, data: edit }})
+		todoFunction.isEmpty({ ...{ ...context, data: edit }})
 			? <Add { ...context }/>
 			: <Update { ...context }/>);
 };
