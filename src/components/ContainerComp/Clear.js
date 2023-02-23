@@ -9,6 +9,7 @@ const Clear = (context) => {
 		<Button
 			className="clear"
 			variant="outlined"
+			disabled={ !todoFunction.isAnyTodoChecked(context) }
 			onClick={ () => setState({
 				...state,
 				todoList: todoFunction.clearTodo(context),

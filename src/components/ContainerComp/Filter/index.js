@@ -1,6 +1,6 @@
 import { Box, ButtonGroup } from '@mui/material';
 import { React } from 'react';
-import Actions from './Actions';
+import Actions from './All';
 
 const Filter = (context) => {
 	const { config: { actions }} = context;

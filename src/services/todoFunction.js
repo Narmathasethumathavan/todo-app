@@ -50,6 +50,9 @@ const getFilter = (context) =>
 
 const isEmpty = ({ data }) => data === '';
 
+const isAnyTodoChecked = ({ state: { todoList }}) =>
+	todoList.some((todo) => todo.isChecked);
+
 const todoFunction = {
 	addTodo,
 	removeTodo,
@@ -61,6 +64,7 @@ const todoFunction = {
 	getFilter,
 	filters,
 	isEmpty,
+	isAnyTodoChecked,
 };
 
 export default todoFunction;
