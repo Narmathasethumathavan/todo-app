@@ -14,11 +14,12 @@ const getState = () => ({
 const App = (context) => {
 	const [state, setState] = useState(getState(context));
 	const extendedContext = { ...{ ...context, state, setState }};
+	const { state: { todoList }} = extendedContext;
 
 	return (
 		<Box className="App">
 			<TodoInput { ...extendedContext }/>
-			<TodoDisplay { ...extendedContext }/>
+			{Boolean(todoList.length) && <TodoDisplay { ...extendedContext }/>}
 		</Box>);
 };
 
